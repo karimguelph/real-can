@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candy Deliveries 2002</title>
+</head>
+<body style="background-color: pink; font-family: Comic Sans MS;">
+
+    <h1>Welcome to SeekoSeeko!</h1>
+
+    <p>You have 500 coins.</p>
+
+    <label>How many grams of weed do you want (1 coin per gram):</label><br>
+    <input id="grams" type="number"><br><br>
+
+    <label>Pick your weed type:</label><br>
+    <select id="type">
+        <option>🍭 Weed</option>
+        <option>🍫 Weed 2</option>
+        <option>🍬 Weed again</option>
+        <option>🍡 Weed</option>
+    </select><br><br>
+
+    <button onclick="orderCandy()">Order NOW!!!</button><br><br>
+
+    <p>After ordering, pick your location:</p>
+    <img src="https://i.imgur.com/lP7YwYA.png" alt="Photo of map" width="400"><br><br>
+    <input type="text" placeholder="Type address here"><br><br>
+
+    <h3>Your Order Summary:</h3>
+    <pre id="summary" style="color: red;"></pre>
+
+    <script>
+        function orderCandy() {
+            var grams = document.getElementById("grams").value;
+            var type = document.getElementById("type").value;
+            if (grams == "" || grams <= 0) {
+                alert("put a real number");
+                return;
+            }
+            if (grams > 500) {
+                alert("you ain't got enough coins 😭 lol loser");
+                return;
+            }
+            var summary = `You ordered ${grams} grams of ${type}.\nYour weed is coming.`;
+            document.getElementById("summary").innerText = summary;
+        }
+    </script>
+
+</body>
+</html>
